@@ -1,0 +1,65 @@
+﻿<html>
+<head>
+    <title>JS Demo</title>
+</head>
+<body>
+
+
+    <script>
+        //document will point to current page, it is a object
+        document.write('JS Demo');
+        var age = 20;
+        var name = "Rohan";
+        var percentage = 88.67;
+        var isUser = true;
+
+        document.write("<br/> age is " + age);
+        if (age >= 18) {
+            document.write("<br/> valid age");
+        }
+        else {
+            document.write("Not valid");
+        }
+
+        for (var i = 1; i <= 10; i++) {
+            document.write("<br/>" + i);
+        }
+
+    </script>
+
+    <script>
+        var result = confirm("Do you want to process payment of Rs 500 ?")
+         if (result == true) {
+        alert('Your payment done successfully');
+         }
+         else {
+        alert('You cancel the payment');
+         }
+    </script>
+
+
+
+    <div id="d1"></div>
+
+    <script>
+        
+        var student =
+            [
+                { id: 1, name: 'Priya', per: 88%, city: 'Pune' },
+                { id: 2, name: 'Riya', per: 87%, city: 'Nashik' },
+                { id: 3, name: 'Payal', per: 77%, city: 'Pune' },
+                { id: 4, name: 'Neha', per: 85%, city: 'Mumbai' }
+            ];
+        var data = "<table border='1'><tr><th>Id</th><th>Name</th><th>Per</th><th>City</th></tr>";
+        for (var i = 0; i < student.length; i++) {
+            data += "<tr><td>" + student[i].id + "</td><td>" + student[i].name + "</td><td>" +
+                student[i].salary + "</td><td>" + student[i].city + "</td></tr>";
+        }
+        data += "</table>";
+        document.getElementById("d1").innerHTML = data;
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="d1"></div>
+    <script>
+        function add(a, b, mycallbackFunc) {
+            var c = a + b;
+            mycallbackFunc(c);
+        }
+        function display(c) {
+            document.getElementById("d1").innerHTML = "addition is" + c;
+        }
+        add(10, 30, display);
+
+
+
+       
+    </script>
+
+
+
+
+   
+    
+</body>
+</html>

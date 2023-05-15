@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+
+        for (let i = 25; i <= 50; i++)
+        {
+            if (i % 2 != 0)
+            document.write("<br/>" + i);
+        }
+
+        //let ch = '0';
+        for (let ch = 'a'; ch < 'z'; ch++)
+        {
+            document.write("<br/>" + ch);
+        }
+
+        var sum = 0;
+        for (var i = 0; i <= 10; i++)
+        {
+            sum = sum + i;
+            
+            document.write("<br>" + sum);
+        }
+        //functions without parameter and return type
+        function Addition() {
+            var a = 10, b = 20;
+            var c = a + b;
+            document.write("<br> Addition is " + c);
+        }
+
+
+        //functions with parameter and no return type
+        function Addition(x,y) {
+            var z = x + y;
+            document.write("<br> Addition is " + z);
+        }
+
+        //call the function
+        Addition();
+        Addition(25, 25);
+    </script>
+</body>
+</html>

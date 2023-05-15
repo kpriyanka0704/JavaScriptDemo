@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="d1"></div>
+    <script>
+        var promise = new Promise(function (resolve, reject) {
+            let req = new XMLHttpRequest();
+            req.open('GET', 'https://jsonplaceholder.typicode.com/users');
+
+            req.onload = function () {
+                if (req.status == 200) {  // 200 is a status code of HTTP --> success
+                    resolve(req.response);
+                }
+                else {
+                    reject("Server Error");
+                }
+            };
+
+            req.send();
+
+        });
+
+        promise.then(function (value) {
+            display(value);
+        }, function (error) { });
+
+        function display(value) {
+            var code = JSON.parse(value);
+            var data = "<table border='1'><tr><th>Street</th><th>Suite</th><th>City</th><th>Zipcode</th></tr>";
+            for (var i = 0; i < code.length; i++) {
+                data += "<tr><td>" + code[i].street + "</td><td>" + code[i].suite + "</td><td>" + code[i].city +
+                    "</td><td>" + code[i].zipcode + "</td><tr>";
+            }
+            data += "</table>";
+
+            document.getElementById("d1").innerHTML = data;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        let a = 10; // global
+
+        function Test1() {
+            let a = 20; // function scope
+            console.log(a);
+
+        }
+
+        {
+            let a = 30; // block scope
+            let b = 100;
+        }
+        Test1();
+        console.log(a);
+        console.log(b);
+
+    </script>
+
+</body>
+</html>

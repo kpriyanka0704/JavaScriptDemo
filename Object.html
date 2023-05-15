@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  
+    <title>Object Demo</title>
+</head>
+<body>
+    <script>
+        //object in javascript
+        var stu = {}; //object declaration
+
+        var Student = {
+            firstname: "Priyanka",
+            lastname: "Kardile",
+            city: "Pune",
+           
+            obtainedmarks: 300,
+            totalmarks:500,
+          
+            display: function () {
+                return this.firstname + " " + this.lastname + " " + this.city+" "+this.obtainedmarks+" "+this.totalmarks+" "+this.totalmarks1();
+            },
+            totalmarks1: function () {
+                var marks = this.obtainedmarks / this.totalmarks;
+               
+                return percentage = marks*100;
+               
+            }
+
+        }
+        console.log(Student.totalmarks1());
+        console.log(Student.display());
+
+        // object in javascript
+        var emp = {}; // emp is a javascript object
+
+        var employee = {
+            firstname: 'Priya',
+            lastname: 'Kardile',
+            age: 20,
+            salary: 25000,
+            display: function () {
+                return this.firstname + " " + this.lastname + " " + this.age + " " + this.salary+" "+this.FullName();
+            },
+            grossSalary: function () {
+                var pf = this.salary * .12;
+                return this.salary = this.salary - pf;
+            },
+            FullName: function () {
+                var fullname = this.firstname + this.lastname;
+                return fullname = this.firstname+" "+this.lastname;
+            }
+        }
+
+        console.log(employee.FullName());
+        console.log(employee.grossSalary());
+        console.log(employee.display())
+
+        //Create object,add propery,add method,accessing a method
+
+        var student = {}; //create object
+
+        student.name = 'Priyanka'; //adding property
+
+        student.greet = function () {
+            console.log("Hello");     //adding Method
+            console.log("Welcome");
+        }
+
+        student.greet();    //accessing a method
+
+
+        
+       var Comp = {};
+        var Company = {
+            name: "Think Quotient",
+            location: "Karve Road",
+            established: 2015,
+            city: "Pune",
+            displayInfo: function () {
+                return this.name + " " + this.location + " " +this.established +" "+this.city;
+            }
+        }
+        console.log(Company.displayInfo());
+
+        var person =
+        {
+            name: "James",
+            getName:function()
+            {
+            return this.name;
+            }
+        }
+        var unboundName = person.getName;
+        var boundName = unboundName.bind(person);
+        document.writeln(boundName());
+    </script>
+</body>
+</html>

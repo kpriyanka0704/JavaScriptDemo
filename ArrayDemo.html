@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+   
+    <title>Array</title>
+</head>
+<body>
+    <div id="d1"></div>
+    <script>
+        var colors= ["Red", "Blue", "Green", "Yellow"];
+        var nums= [10, 20, 30, 40];
+        var data = "<ol>";
+        for (var i = 0; i < colors.length; i++) {
+            data += "<li>" + colors[i] + "</li>";
+        }
+        data += "</ol>";
+        console.log(data);
+        document.getElementById("d1").innerHTML = data;
+
+        //Methods of Array in JavaScript
+
+        var colors = ["Red", "Blue", "Green", "Yellow"];
+        colors.push("Orange");//add last
+        colors.pop();//remove last
+
+        colors.unshift("While");//add first
+        colors.shift();//remove first
+
+        colors.splice(1, 1, "Pink", "Purple");//remove indeex element and add new element in same array
+        var list=colors.slice(2,6);// create another array and cut the element
+
+        colors.sort();//sory descending order by default
+        colors.reverse();//reverse array
+        
+
+        console.log(colors);//call function
+        console.log(list);
+
+        //Display string by using foreach loop  
+        var colors = ["Red", "Blue", "Green", "Yellow"];
+        colors.forEach(display);
+
+        function display(colors) {
+            console.log(colors);
+        }
+
+        //Display num Array by using foreach loop 
+        var num = [10,20,30,40,50];
+        num.forEach(display);
+
+        function display(num) {
+            console.log(num);
+        }
+
+        //Map Function{to put some logic}
+        var num = [10, 20, 30, 40, 50];
+        num.forEach(display);
+
+        var result = num.map(test);
+        console.log(result);
+
+        function test(num) {
+            return num * 2;
+        }
+        function display(num) {
+            console.log(num);
+        }
+
+        //Filter Function{to put some logic}
+        var num = [10, 20, 30, 40, 50];
+        num.forEach(display);
+
+        var res = num.filter(test2);//filter fun
+        console.log(res);
+
+        function test2(n) {
+            if (n % 4 == 0) {
+                return n;
+            }
+            
+        }
+       
+        function display(num) {
+            console.log(num);
+        }
+
+        //practice example
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        
+
+        var text = "<ul>";
+        for (var i = 0; i < fruits.length; i++) {
+            text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+
+        fruits.push("Lemon");//add last
+        fruits.pop();//remove last
+
+        fruits.unshift("Watermelon");//add first
+        fruits.shift();//remove first
+
+        fruits.splice(1, 1, "Kivi", "Lemon");//remove indeex element and add new element in same array
+        var list = fruits.slice(2, 6);// create another array and cut the element
+
+        fruits.sort();//sory descending order by default
+        fruits.reverse();//reverse array
+
+
+        console.log(fruits);//call function
+        console.log(list);
+
+        var arr = [7, 5, 9, 1];
+        var value = Math.max.apply(null, arr);
+        document.write(value);
+
+        function myfunction() {
+            var data = "";
+            var i = 0;
+            do {
+                data += "<br> the num is" + i;
+                i++;
+            }
+            while (i < 5);
+            document.write(data);
+        }
+
+        let a = 25
+        {
+            a = 5;
+        }
+        {
+            a = 10;
+        }
+        document.write(a);
+    </script>
+</body>
+</html>

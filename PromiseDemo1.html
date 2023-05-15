@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <script>
+        var promise = new Promise(function (resolve, reject) {
+            let req = new XMLHttpRequest();
+            req.open('GET', 'https://jsonplaceholder.typicode.com/users');
+
+            req.onload = function () {
+                if (req.status == 200) {  // 200 is a status code of HTTP --> success
+                    resolve(req.response);
+                }
+                else {
+                    reject("Server Error");
+                }
+            };
+
+            req.send();
+
+        });
+
+        promise.then(function (value) {
+            display(value);
+        }, function (error) { });
+
+
+        function display(value) {
+            var code = JSON.parse(value);
+
+            var data = "<table border='1'><tr><th>Id</th><th>Name</th><th>Username</th><th>Email</th></tr>";
+
+            for (var i = 0; i < code.length; i++) {
+                data += "<tr><td>" + code[i].id + "</td><td>" + code[i].name + "</td><td>" + code[i].username +
+                    "</td><td>" + code[i].email + "</td><tr>";
+
+            }
+            data += "</table>";
+            document.getElementById("d1").innerHTML = data;
+
+            var address = JSON.parse(value);
+            var data1 = "<table border='1'><tr><th>Street</th><th>Suite</th><th>City</th><th>Zipcode</th></tr>";
+            for (var i = 0; i < address.length; i++) {
+                data1 += "<tr><td>" + address[i].street + "</td><td>" + address[i].suite + "</td><td>" + address[i].city +
+                    "</td><td>" + address[i].zipcode + "</td><tr>";
+            }
+            data1 += "</table>";
+            document.getElementById("d2").innerHTML = data1;
+
+            var geo = JSON.parse(value);
+            var data2 = "<table border='1'><tr><th>lat</th><th>lng</th></tr>";
+            for (var i = 0; i < geo.length; i++) {
+                data2 += "<tr><td>" + geo[i].lat + "</td><td>" + geo[i].lng + "</td><td>";
+            }
+            data2 += "</table>";
+
+            document.getElementById("d1").innerHTML = data2;
+
+        }
+    </script>
+
+</body>
+</html>

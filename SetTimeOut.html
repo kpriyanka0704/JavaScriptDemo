@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="d1"></div>
+    <script>
+        //set timeout
+        setTimeout(display, 3000)
+
+        function display() {
+            document.getElementById("d1").innerHTML = "hello to all....";
+        }
+
+        //Set interval
+
+        setInterval(showTime, 1000);
+
+        function showTime() {
+            let d = new Date();
+            let response = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+            document.getElementById("d1").innerHTML = response;
+        }
+
+    </script>
+</body>
+</html>
